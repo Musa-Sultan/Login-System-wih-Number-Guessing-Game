@@ -1,0 +1,61 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="top-menu">
+            <div class="logo"></div>
+            <div class="user-info">
+                <a href="{% url 'logout' %}"><button>Logout</button></a>
+            </div>
+        </div>
+    </header>
+
+        <main>
+            <h1>Welcome to the Number Guessing Game</h1>
+            <p class="text1">In the number guessing game, players attempt to guess a secret number chosen by the
+                computer.
+                The game has
+                three difficulty levels: easy, medium, and hard. Each level features different ranges for the secret
+                number
+                and varying amounts of hints and attempts. The objective is to guess the number correctly within the
+                allowed
+                attempts while receiving feedback on whether guesses are too high or too low.</p>
+            <div class="difficulty-container">
+                <div class="difficulty easy">
+                    <h2>Easy</h2>
+                    <p>In the easy level of the number guessing game, players have 10 attempts to guess a secret number
+                        within a range of 1 to 100. </p>
+                    <button class="start-btn"><a href="{% url 'easy' %}">Start Game</a></button>
+                </div>
+                <div class="difficulty medium">
+                    <h2>Medium</h2>
+                    <p>
+                        In the medium level of the number guessing game, players have 15 attempts to guess a secret
+                        number
+                        within a range of 1 to 150. </p>
+                    <button class="start-btn"><a href="{% url 'medium' %}">Start Game</a></button>
+                </div>
+                <div class="difficulty hard">
+                    <h2>Hard</h2>
+                    <p>In the hard level of the number guessing game, players have 20 attempts to guess a secret number
+                        within a range of 1 to 200.</p>
+                    <button class="start-btn"><a href="{% url 'hard' %}">Start Game</a></button>
+                </div>
+            </div>
+        </main>
+
+    <footer>
+        <p>&copy; 2024 Number Guessing Game. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
